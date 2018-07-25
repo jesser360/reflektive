@@ -27,8 +27,7 @@ class PagesController < ApplicationController
     def get_feedback_scores(manager_id)
       @employee_feedbacks = {}
       @feedbacks.each do |feedback|
-        if feedback['recipient_id'] ==  manager_id
-          # puts feedback
+        if feedback['reviewer_id'] ==  manager_id
           unless @employee_feedbacks.key?(feedback['question']['id'])
             @employee_feedbacks[feedback['question']['id']] = []
           end

@@ -1,11 +1,19 @@
 
 
-Feedback questions w scores<br>
-<%=@json_request%>
+Questions with manager's scores<br>
+<%@json_request.each do |question|%>
+  <%question.each do |key,value|%>
+    <%=key%> : <%= value%><br>
+  <%end%>
+  <hr>
+<%end%>
 <hr>
-<!-- Emplyee Average score -->
-<!-- <%=@employee_average_score%> -->
 
 
-RESPONSE
-<%=@response%>
+<br>
+RESPONSE <br>
+<%@response['results'].each do |response|%>
+  <%=response['correct']%>.
+  <%=response['message']%>
+  <hr>
+<%end%>
