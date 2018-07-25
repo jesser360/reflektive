@@ -1,6 +1,13 @@
-
-
-Questions with manager's scores<br>
+<h3>Bonus search for all the other employees average scores</h3>
+<%= form_tag("/employee_search", method: "get") do %>
+<label>Search Here to find an employee's average question score!</label><br>
+<%= select_tag "employee_id", options_for_select(@employee_list.map { |obj| [obj[:name], obj[:id]] }) %>
+<%= submit_tag("Search") %>
+<%end%>
+<br>
+<h2>TEST ANSWERS FOR CODING CHALLENGE:</h2>
+<h4>Below are the request and reponses for managers "ab487f8c-8ebc-4bf6-b8fa-8dc85f880716" and "f4cb98dc-e6a0-488e-93a2-e9241c5b70f6"</h4>
+<h4>JSON REQUEST</h4>
 <%@json_request.each do |question|%>
   <%question.each do |key,value|%>
     <%=key%> : <%= value%><br>
@@ -11,7 +18,7 @@ Questions with manager's scores<br>
 
 
 <br>
-RESPONSE <br>
+<h4>JSON RESPONSE </h4>
 <%@response['results'].each do |response|%>
   <%=response['correct']%>.
   <%=response['message']%>

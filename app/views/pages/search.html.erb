@@ -1,0 +1,14 @@
+<a href ='/'>GO BACK</a><br><br>
+You have search employee : <%=@employee['id']%><br>
+Name: <%=@employee['name']%><br>
+Department: <%=@employee['department']%><br>
+Title: <%=@employee['title']%><br>
+Manager ID: <%=@employee['manager_id']%><br><br>
+
+<hr>
+
+<%@results.each do |question|%>
+  Question ID: <%=question[:question_id]%><br>
+  Average Score: <%=question[:average_score]%><br>
+  <br>
+<%end%>
