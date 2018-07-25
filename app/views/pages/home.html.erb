@@ -2,6 +2,7 @@
 <%= form_tag("/employee_search", method: "get") do %>
 <label>Search Here to find an employee's average question score!</label><br>
 <%= select_tag "employee_id", options_for_select(@employee_list.map { |obj| [obj[:name], obj[:id]] }) %>
+<span><i>*Try searching for IZac or Ladybuggle for users with exisiting feedbacks*</i></span><br>
 <%= submit_tag("Search") %>
 <%end%>
 <br>

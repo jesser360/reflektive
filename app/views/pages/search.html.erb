@@ -6,9 +6,12 @@ Title: <%=@employee['title']%><br>
 Manager ID: <%=@employee['manager_id']%><br><br>
 
 <hr>
-
-<%@results.each do |question|%>
-  Question ID: <%=question[:question_id]%><br>
-  Average Score: <%=question[:average_score]%><br>
-  <br>
+<%if @results.length > 0%>
+  <%@results.each do |question|%>
+    Question ID: <%=question[:question_id]%><br>
+    Average Score: <%=question[:average_score]%><br>
+    <br>
+  <%end%>
+<%else%>
+<h3>No feedback has been given for this employee</h5>
 <%end%>
